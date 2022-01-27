@@ -35,6 +35,7 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # aliases
 alias k="kubectl"
 alias p10k-update="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
+alias dot-update="curl -L https://github.com/danacr/dotfiles/raw/master/.zshrc --output $HOME/.zshrc && exec zsh"
 
 go_test() { go test $* | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/SKIP/s//$(printf "\033[34mSKIP\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | GREP_COLOR="01;33" egrep --color=always '\s*[a-zA-Z0-9\-_.]+[:][0-9]+[:]|^'
 }
